@@ -1,0 +1,7 @@
+<% @directories.each do |directory| -%>
+set dir[. = "<%= directory %>"] <%= directory %>
+set dir[. = "<%= directory %>"]/client *
+<% @parameters.each do |parameter| -%>
+set dir[. = "<%= directory %>"]/client/option[<%= @parameters.index(parameter) + 1 %>] <%= parameter %>
+<% end -%>
+<% end -%>
